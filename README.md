@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/PrimeXV/PrimeXV-roomPage-website)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Github](https://primexv.github.io/PrimeXV-roomPage-website/)
 
 ## My process
 

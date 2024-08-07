@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+}
+
+.container {
+  display: grid;
+  height: auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.9fr 1.5fr 1fr 1.2fr 1fr;
+  grid-template-areas:
+    "nav-container"
+    "info-container"
+    "background1"
+    "content"
+    "background2";
+}
+
+.nav-container {
+  background-image: url("images/mobile-image-hero-1.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-area: nav-container;
+  color: white;
+  position: relative;
+}
+
+nav {
+  height: 100px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.hamburger,
+.close-hamburger {
+  position: absolute;
+  left: 20px;
+}
+
+.close-hamburger {
+  display: none;
+}
+
+ul {
+  visibility: hidden;
+  position: absolute;
+  right: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: black;
+  font-size: 15px;
+  text-transform: lowercase;
+  font-weight: 650;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.2s ease-in-out;
+}
+
+nav ul li a:active {
+  padding-bottom: 8px;
+  border-bottom: 2px solid black;
+}
+
+.fullscreen-overlay {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 85.5vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: none; /* Initially hidden */
+  z-index: 1;
+}
+
+.nav-container .swiper-btn {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  width: auto;
+  visibility: visible;
+}
+
+.info-container .swiper-btn {
+  visibility: hidden;
+}
+
+.left,
+.right {
+  background-color: black;
+  padding: 15px 12px 15px 25px;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.left:active,
+.right:active {
+  background-color: hsl(0, 0%, 27%);
+}
+
+.info-container {
+  grid-area: info-container;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-wrapper {
+  max-width: 70%;
+}
+
+.slide2,
+.slide3 {
+  display: none;
+}
+
+.inner {
+  white-space: normal;
+  margin: 30px 0;
+  max-width: 70%;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+p {
+  justify-content: center;
+  color: hsl(0, 0%, 63%);
+  line-height: 1.2;
+  font-size: 13px;
+  margin: 15px 0;
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.info-container a {
+  color: hsl(0, 0%, 27%);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+.background1 {
+  background-image: url("images/image-about-dark.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-area: background1;
+}
+
+.content {
+  background-color: white;
+  grid-area: content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background2 {
+  background-image: url("images/image-about-light.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-area: background2;
+}
+
+/* hover-states */
+.arrow:active,
+.info a:active {
+  color: hsl(0, 0%, 63%);
+  cursor: pointer;
+}
+
+/* desktop view */
+@media only screen and (min-width: 710px) and (max-width: 4000px) {
+  .container {
+    height: 100vh;
+    grid-template-columns: 0.6fr 0.55fr 0.2fr 0.6fr;
+    grid-template-rows: 1.8fr 0.7fr;
+    grid-template-areas:
+      "nav-container nav-container info-container info-container"
+      "background1 content content background2";
+  }
+
+  .nav-container {
+    background-image: url(images/desktop-image-hero-1.jpg);
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  nav {
+    height: 100px;
+  }
+
+  .room {
+    position: absolute;
+    left: 50px;
+    font-size: 40px;
+  }
+
+  ul {
+    visibility: visible;
+    position: absolute;
+    left: 10rem;
+  }
+
+  nav ul li a {
+    color: white;
+    font-size: 20px;
+  }
+
+  nav ul li a:hover {
+    border-bottom: 2px solid white;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .info a {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .nav-container .swiper-btn {
+    visibility: hidden;
+  }
+
+  .info-container .swiper-btn {
+    visibility: visible;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media only screen and (min-width: 710px) and (max-width: 950px) {
+  .info-container {
+    height: 100vh;
+  }
+
+  .left,
+  .right {
+    padding: 8px;
+  }
+
+  a {
+    font-size: 10px;
+    margin-left: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+}
